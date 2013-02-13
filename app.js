@@ -14,7 +14,7 @@ var app = express();
 
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
-  app.set('views', __dirname + '/views');
+  app.set('views', __dirname + '/public/templates');
   app.set('view engine', 'hjs');
   app.use(express.favicon());
   app.use(express.logger('dev'));
