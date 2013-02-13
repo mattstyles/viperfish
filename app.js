@@ -4,6 +4,7 @@
  */
 
 var express     = require('express'),
+    cons        = require('consolidate'),
     viperfish   = require('./lib/viperfish'),
     http        = require('http'),
     path        = require('path');
@@ -14,6 +15,7 @@ var app = express();
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
   app.set('views', __dirname + '/public/templates');
+  app.engine('hjs', cons.hogan);
   app.set('view engine', 'hjs');
   app.use(express.favicon());
   app.use(express.logger('dev'));
