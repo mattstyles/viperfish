@@ -4,14 +4,13 @@
  */
 
 var express     = require('express'),
-    routes      = require('./routes'),
-    user        = require('./routes/user'),
     viperfish   = require('./lib/viperfish'),
     http        = require('http'),
     path        = require('path');
 
 var app = express();
 
+// Configure express server
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
   app.set('views', __dirname + '/public/templates');
@@ -24,15 +23,15 @@ app.configure(function(){
   app.use(express.static(path.join(__dirname, 'public')));
 });
 
+// Configure for development
 app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
-//app.get('/', routes.index);
-//app.get('/users', user.list);
-
+// Configure routes
 app.get('/', viperfish.index);
 
+// Create the server
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
 });
