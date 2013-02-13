@@ -17,7 +17,7 @@
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/mattstyles/nodetest/blob/master/LICENSE-MIT"
+      "url": "https://github.com/mattstyles/viperfish/blob/master/LICENSE-MIT"
     }
   ],
   "main": "lib/viperfish",
