@@ -6,14 +6,6 @@
  * Licensed under the MIT license.
  */
 
-// Node requires for starting the server
-var http        = require('http'),
-    path        = require('path');
-
 // Require Viperfish
-var vp = require('./lib/viperfish');
+require('./lib/viperfish').start();
 
-// Create the server and start listening
-http.createServer(vp).listen(vp.get('port'), function(){
-  console.log("Express server listening on port " + vp.get('port'));
-});
