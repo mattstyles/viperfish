@@ -1,0 +1,4 @@
+<nav>
+    <p>This is the nav template for {{title}}</p>
+
+</nav>
