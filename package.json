@@ -1,7 +1,7 @@
 {
   "name": "viperfish",
   "description": "Node/Github Blogging Server",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "homepage": "https://github.com/mattstyles/viperfish",
   "author": {
     "name": "Matt Styles",

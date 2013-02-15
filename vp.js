@@ -6,6 +6,6 @@
  * Licensed under the MIT license.
  */
 
-// Require Viperfish
+// Require and start Viperfish
 require('./lib/viperfish').start();
 
