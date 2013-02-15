@@ -5,11 +5,10 @@
 
 var express     = require('express'),
     cons        = require('consolidate'),
-    viperfish   = require('./lib/viperfish'),
     http        = require('http'),
     path        = require('path');
 
-var app = express();
+var app = module.exports = express();
 
 // Configure express server
 app.configure(function(){
@@ -31,7 +30,8 @@ app.configure('development', function(){
 });
 
 // Configure routes
-app.get('/', viperfish.index);
+//app.get('/', viperfish.index);
+require( './lib/vp-router' );
 
 // Create the server
 http.createServer(app).listen(app.get('port'), function(){
