@@ -1,4 +1,7 @@
 <nav>
-    <p>This is the nav template for {{title}}</p>
-
+    <ul>
+        {{#content.nav}}
+            <li>{{ item }}</li>
+        {{/content.nav}}
+    </ul>
 </nav>
