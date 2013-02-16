@@ -1,5 +1,10 @@
 <ul>
     {{#content.recent}}
-        <li>{{ post.title }}</li>
+        <li>
+            <hr>
+            <h2>{{ post.title }}</h2>
+            <p><small>{{ post.category }} | {{ post.date }}</small></p>
+            <p>{{ post.extract }}</p>
+        </li>
     {{/content.recent}}
 </ul>
