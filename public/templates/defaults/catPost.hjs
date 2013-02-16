@@ -1,0 +1,5 @@
+<ul>
+    {{#content.recent}}
+        <li>{{ post.title }}</li>
+    {{/content.recent}}
+</ul>
