@@ -2,6 +2,11 @@
 
     <h1>{{ title }}</h1>
     <p>Welcome to {{ title }}</p>
-    <p>Content:</p>
+
+    <ul>
+        {{#content.recent}}
+            <li>{{ post.title }}</li>
+        {{/content.recent}}
+    </ul>
 
 {{> footer }}
