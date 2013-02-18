@@ -8,4 +8,3 @@
 
 // Require and start Viperfish
 require('./lib/viperfish').start();
-
