@@ -1,7 +1,7 @@
 <nav>
     <ul>
-        {{#content.nav}}
+        {{#nav}}
             <li><a href='/{{item}}'>{{ item }}</a></li>
-        {{/content.nav}}
+        {{/nav}}
     </ul>
 </nav>
