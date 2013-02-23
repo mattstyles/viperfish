@@ -16,32 +16,35 @@ Follow the getting started instructions to see it in action (I told you, its not
 Customising it to point to your own content currently means that the content has to be in a specific format (it'll blow
 up if it's not) and that you go poking around in the module to set the path to the content.
 
-To set your content path have a look in ```/lib/vpf-config.js``` and change ```githubapi.contentOpts``` to point to
-your public repo (keep ```path``` set to null - viperfish will work this out).
+To set your content path have a look in `/lib/vpf-config.js` and change `githubapi.contentOpts` to point to
+your public repo (keep `path` set to null - viperfish will work this out).
 
 It is currently pointing to some default dummy content - to have a look at the required format for the content go
-[here](https://github.com/mattstyles/vpf-def).  Very briefly - the repo root needs a ```main.json```, each subfolder
-(which forms a category) requires a ```category.json``` and each subfolder within that (which forms a post) requires
-a ```page.json``` and a ```content.md```.
+[here](https://github.com/mattstyles/vpf-def).  Very briefly - the repo root needs a `main.json`, each subfolder
+(which forms a category) requires a `category.json` and each subfolder within that (which forms a post) requires
+a `page.json` and a `content.md`.
 
 I wouldn't recommend using in situ yet but if you do you'll need to authenticate with github to grab your content.  Set
-up ```GHusername``` and ```GHpassword``` environment variables for basic authentication.
+up `GHusername` and `GHpassword` environment variables for basic authentication.
 
 ## Getting Started
 Install the module with: `npm install viperfish`
 
-Stick this in your start script (i.e ```start.js```)
+Stick this in your start script (i.e `start.js`)
+
 ```javascript
 require('viperfish').start();
 ```
 
-Fire up your start script
-```node start```
+Fire up your start script `node start`
 
 Have a look at it
-```curl -i -X GET http://localhost:3001```
+
+`curl -i -X GET http://localhost:3001`
+
 or point your browser to
-```localhost:3001```
+
+`localhost:3001`
 
 ## Documentation
 _(Coming soon)_
