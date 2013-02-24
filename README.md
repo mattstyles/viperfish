@@ -46,6 +46,27 @@ or point your browser to
 
 `localhost:3001`
 
+## Customising
+
+_Config_
+
+Have a look in `/lib/vpf-config.js` for various things to set.  To point to your own content you'll want to change the
+`githubapi.contentOpts` object to contain your username and the name of the repository.  It's only been tested with
+public repos but authorisation occurs so private repos probably will work fine.
+
+_GitHub Authorisation_
+
+Speaking of authorisation - it'll work without but you'll be rate limited by GitHub to 60 requests per hour.  To authorise
+you need to set `GHusername` and `GHpassword` environment variables.
+
+_Static Assets_
+
+If a `public` folder exists at the root then Viperfish will serve CSS and JS from there rather than its own defaults.
+If you additionally place a `templates` folder into your `public` directory then your templates will come from there
+too.  There is currently limited support for templates and a great chance of blowing up - to limit blow-up chances if
+you want custom templates then you'll need to create all of them.  Best bet is to copy and paste the entire templates
+directory into the project root and then change as needed.
+
 ## Documentation
 _(Coming soon)_
 
