@@ -1,6 +1,6 @@
 # viperfish
 
-Node/Github Markdown Blogging System
+Node/Github Database-less Markdown Blogging System
 
 __Early Alpha__
 
