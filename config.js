@@ -21,7 +21,8 @@ module.exports = {
         nav         : [],
         port        : 3001,
         customPath  : '/public/',
-        favicon     : 'favicon.png'
+        favicon     : 'favicon.png',
+        logo        : 'logo.png'
     },
 
     // Template Options
