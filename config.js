@@ -15,6 +15,9 @@
  * This will be done automatically by the install process when there is one!
  * @type {Object}
  */
+
+var hljs = require( 'highlight.js' );
+
 module.exports = {
     // Module Options
     moduleOpts: {
@@ -60,10 +63,10 @@ module.exports = {
         langPrefix  : 'language-',
         highlight   : function ( code, lang ) {
             // Javascript highlighting
-            if ( lang === 'js' ) {
-                return highlighter.javascript(code);
+            if ( lang === 'javascript' ) {
+              return hljs.highlight(lang, code).value;
             }
             return code;
         }
     }
-}
+};
