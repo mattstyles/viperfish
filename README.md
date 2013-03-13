@@ -2,75 +2,120 @@
 
 Node/Github Database-less Markdown Blogging System
 
-__Early Alpha__
+__Alpha v0.4.0__
 
 _Use with discretion!_
 
 Viperfish is a simple blogging system that grabs content from a github repo.
 
-It is currently in early alpha and, as such, its not particularly robust but if you follow the rules it'll work, it
-just wont be pretty!
+It is currently in early alpha and, as such, its not particularly robust but if you follow the rules it'll work just
+fine, as demonstrated by the [examples](#usage-examples "Viperfish in the wild").
 
-Follow the getting started instructions to see it in action (I told you, its not pretty!)
+Follow the getting started instructions to see it in action (I warn you though, the vanilla version won't be pretty, see
+the [customisation](#customisation "Customising Viperfish") section).
 
-Customising it to point to your own content currently means that the content has to be in a specific format (it'll blow
-up if it's not) and that you go poking around in the module to set the path to the content.
+To get started see the [getting started](#getting-started "Installing Viperfish") section of course!
 
-To set your content path have a look in `/lib/vpf-config.js` and change `githubapi.contentOpts` to point to
-your public repo (keep `path` set to null - viperfish will work this out).
-
-It is currently pointing to some default dummy content - to have a look at the required format for the content go
-[here](https://github.com/mattstyles/vpf-def).  Very briefly - the repo root needs a `main.json`, each subfolder
-(which forms a category) requires a `category.json` and each subfolder within that (which forms a post) requires
-a `page.json` and a `content.md`.
-
-I wouldn't recommend using in situ yet but if you do you'll need to authenticate with github to grab your content.  Set
-up `GHusername` and `GHpassword` environment variables for basic authentication.
 
 ## Getting Started
-Install the module with: `npm install viperfish`
 
-Stick this in your start script (i.e `start.js`)
+Install viperfish with npm,
+
+```javascript
+npm install viperfish
+```
+
+Create a start script to spark up viperfish,
+
+```
+touch index.js
+```
+
+Stick this in your start script,
 
 ```javascript
 require('viperfish').start();
 ```
 
-Fire up your start script `node start`
+That's all you need to get started with viperfish!!  Simple no?
 
-Have a look at it
+To see it in action (remember what I said early about prettiness?), use node to fire up the server,
 
-`curl -i -X GET http://localhost:3001`
+```
+node start
+```
+
+Then have a look at it with (default port is `3001`),
+
+```
+curl -X GET http://localhost:3001
+```
 
 or point your browser to
 
-`localhost:3001`
+```
+localhost:3001
+```
 
-## Customising
+Whilst this is all very functional the default content and theme is pretty boring, you'll be wanting to improve upon
+that with some customisations.
 
-_Config_
 
-Have a look in `/lib/vpf-config.js` for various things to set.  To point to your own content you'll want to change the
-`githubapi.contentOpts` object to contain your username and the name of the repository.  It's only been tested with
-public repos but authorisation occurs so private repos probably will work fine.
+## Customisation
 
-_GitHub Authorisation_
+### Pre-requisites
 
-Speaking of authorisation - it'll work without but you'll be rate limited by GitHub to 60 requests per hour.  To authorise
-you need to set `GHusername` and `GHpassword` environment variables.
+Viperfish works by grabbing content from a github repo, passing it through a theme to style it and displaying it in
+the browser.  In order to make viperfish work for you you'll need to create some content and you'll need to create
+a theme to display that content.
 
-_Static Assets_
+When viperfish is started there are a number of steps that it will perform to correctly initialise itself:
 
-If a `public` folder exists at the root then Viperfish will serve CSS and JS from there rather than its own defaults.
-If you additionally place a `templates` folder into your `public` directory then your templates will come from there
-too.  There is currently limited support for templates and a great chance of blowing up - to limit blow-up chances if
-you want custom templates then you'll need to create all of them.  Best bet is to copy and paste the entire templates
-directory into the project root and then change as needed.
+* [Github Authorisation](#github-authorisation)
 
-## Documentation
-_(Coming soon)_
+* [Register custom configuration file](#custom-configuration-file)
+
+* [Register custom templates](#custom-templates)
+
+* [Register custom static files](#custom-static-files)
+
+* [Register custom favicon](#custom-favicon)
+
+### Github Authorisation
+
+If you followed through the [Getting Started](#getting-started "Installing Viperfish") section then you probably noticed
+that viperfish threw this log at you,
+
+```
+No github credentials in environment vars --- Unauthorised access to github --- max rate limit of 60 reqs per hour
+```
+
+Basic github authorisation is not required for public repositories and the default repo that viperfish pulls dummy
+content from is public so it'll connect to github and get the content for you with no problems.  However, basic authorisation
+is limited to 60 requests per hour.
+
+In order to lift the 60 requests per hour limit you can register 2 environment variables that viperfish will use to
+authenticate properly with github.
+
+`GHusername` - the owner of the content repo
+
+`GHpassword` - the password of the repo owner
+
+### Custom Configuration File
+
+### Custom Templates
+
+### Custom Static Files
+
+### Custom Favicon
 
 ## Usage Examples
+_(Coming soon)_
+
+## Using Nodejitsu
+_(Coming soon)_
+
+## Documentation
 _(Coming soon)_
 
 ## Release History
