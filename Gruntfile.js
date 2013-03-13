@@ -8,38 +8,41 @@ module.exports = function(grunt) {
         // --   Meta
         // --
         // ------------------------------------------------------
+
         pkg: grunt.file.readJSON('package.json'),
 
-        lint: {
-            files: ['lib/**/*.js']
-        },
+        banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
+                '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
+                '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
+                '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
+                ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
 
-        watch: {
-            files: '<config:lint.files>',
-            tasks: 'default'
-        },
+        // ------------------------------------------------------
+        // --
+        // --   Task Config
+        // --
+        // ------------------------------------------------------
 
+        // Keep code tight
         jshint: {
             options: {
-                curly: true,
-                eqeqeq: true,
-                immed: true,
-                latedef: true,
-                newcap: true,
-                noarg: true,
-                sub: true,
-                undef: true,
-                boss: true,
-                eqnull: true,
-                node: true
+                jshintrc: '.jshintrc'
             },
 
-            globals: {
-                exports: true
+            // Lint the gruntfile
+            gruntfile: {
+                src: 'Gruntfile.js'
+            },
+
+            // Linting ready for production -- i.e. all the library files
+            prod: {
+                src: [ 'lib/**/*.js' ]
             }
         }
 
     });
+
+    grunt.loadNpmTasks('grunt-contrib-jshint');
 
     // Default task.
     grunt.registerTask('default', 'lint test');
