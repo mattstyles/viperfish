@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = function(grunt) {
 
     // Grunt Init
@@ -23,7 +25,7 @@ module.exports = function(grunt) {
         // --
         // ------------------------------------------------------
 
-        // Keep code tight
+        // Keep shizzle tight
         jshint: {
             options: {
                 jshintrc: '.jshintrc'
@@ -34,17 +36,22 @@ module.exports = function(grunt) {
                 src: 'Gruntfile.js'
             },
 
-            // Linting ready for production -- i.e. all the library files
-            prod: {
+            // Project linting
+            lib: {
                 src: [ 'lib/**/*.js' ]
             }
         }
 
     });
 
+    // ------------------------------------------------------
+    // --
+    // --   Load and register tasks
+    // --
+    // ------------------------------------------------------
     grunt.loadNpmTasks('grunt-contrib-jshint');
 
     // Default task.
-    grunt.registerTask('default', 'lint test');
+    grunt.registerTask('default', 'lint');
 
 };
