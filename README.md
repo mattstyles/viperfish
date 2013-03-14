@@ -63,11 +63,11 @@ that with some customisations.
 
 ## Customisation
 
-### Pre-requisites
+### How Viperfish Works
 
 Viperfish works by grabbing content from a github repo, passing it through a theme to style it and displaying it in
-the browser.  In order to make viperfish work for you you'll need to create some content and you'll need to create
-a theme to display that content.
+the browser.  In order to make viperfish work for you you'll need to create some [content](#creating-content "How to create content")
+and you'll need to create a theme to display that content.
 
 When viperfish is started there are a number of steps that it will perform to transparently initialise itself:
 
@@ -161,11 +161,63 @@ module.exports = {
 };
 ```
 
+You can see an example of a config file in the [github repo](https://github.com/mattstyles/viperfish/blob/master/config.js "config").
+
+_highlight.js_
+
+The first line to require highlight.js is only required if you alter the markdown parser options later in the config
+file.
+
+_Module Options_
+
+This object holds the options for setting up the viperfish module.
+
+`nav` - Array of navigation menu options if, for some reason, you want your navigation menu to differ from the options
+found in your content repository's main.json (see [creating content](#creating-content "How to Create Content")).
+
+`port` - The port to use when sparking up viperfish locally.
+
+`customPath` - This is the directory that holds the theme files (such as css, js & templates).
+
+`favicon` - The filename of the favicon to use, contained in the `/customPath/`.
+
+`logo` - The logo that is associated with the website, some themes will require it, others not.
+
+_Template Options_
+
+Viperfish uses the [Express](http://expressjs.com/ "Express") web application framework and supports templates to create
+it's themes.
+
+`engine` - The templating engine to use, currently only [hogan.js](http://twitter.github.com/hogan.js/ "Hulkamania Is Running Wild")
+is supported.  Behind the scenes viperfish uses [consolidate.js](http://jsdoc.info/visionmedia/consolidate.js/ "Consolidate.js")
+to push templates to the express view engine.
+
+`path` - This is the path location of the templates, found within `moduleOpts.customPath/templates/`.
+
+_GithubApi Options_
+
+To grab content from github repositories to use as content Viperfish uses [node-github](https://github.com/mikedeboer/node-github "Javascript GitHub API")
+as a wrapper around the [Github API v3](http://developer.github.com/v3/ "GitHub API v3").
+
+`apiOpts` - This contains the version of the api to wrap and a timer in milliseconds before the call to the api fails.
+
+`contentOpts` - This is primary means of pointing Viperfish to your content, enter the username and repository name and,
+very importantly, leave `path` as `null` (it'll be over-written anyway but, to be sure, leave it in the config for now).
+
+_Marked Options_
+
+Viperfish uses [Marked](https://github.com/chjj/marked "Markdown Parser") to parse the raw markdown data because Marked
+is just so awesome!
+
+There are various options and if you want to fiddle with them its best to read the info from the [Marked](https://github.com/chjj/marked "Markdown Parser") github repo.
+
 ### Custom Templates
 
 ### Custom Static Files
 
 ### Custom Favicon
+
+## Creating Content
 
 ## Usage Examples
 _(Coming soon)_
