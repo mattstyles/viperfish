@@ -105,6 +105,62 @@ authenticate properly with github.
 
 ### Custom Configuration File
 
+The config file is an object that holds a number of different configuration options that Viperfish uses.
+
+For the sake of completeness this is an example config file that sets all of the config options (these are actually the
+default options, any of these options can be omitted from your config file and viperfish will use the defaults),
+
+```javascript
+var hljs = require( 'highlight.js' );
+module.exports = {
+    // Module Options
+    moduleOpts: {
+        nav         : [],
+        port        : 3001,
+        customPath  : '/public/',
+        favicon     : 'favicon.png',
+        logo        : 'logo.png'
+    },
+
+    // Template Options
+    tmplOpts: {
+        engine  : 'hogan',
+        path    : './default/'
+    },
+
+    // GithubApi Config Options
+    githubapi : {
+        apiOpts : {
+            version     : '3.0.0',
+            timeout     : 5000
+        },
+        contentOpts : {
+            user        : 'mattstyles',
+            repo        : 'vpf-def',
+            path        : null
+        }
+    },
+
+    // Marked Config Options
+    markedOpts : {
+        gfm         : true,
+        tables      : true,
+        breaks      : false,
+        pedantic    : false,
+        sanitize    : false,
+        smartLists  : true,
+        langPrefix  : 'language-',
+        highlight   : function ( code, lang ) {
+            // Javascript highlighting
+            if ( lang === 'javascript' ) {
+              return hljs.highlight(lang, code).value;
+            }
+            return code;
+        }
+    }
+};
+```
+
 ### Custom Templates
 
 ### Custom Static Files
