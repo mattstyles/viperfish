@@ -263,7 +263,14 @@ in between it displays the main content of the post/page that has been grabbed f
 
 ### Custom Static Files
 
+The other half of customising Viperfish - those lovingly crafted CSS files that define the look and feel of your project
+should be included in here.  Any images that your theme uses can also be included here, as should any javascript that
+you want to use in your theme.
+
 ### Custom Favicon
+
+Viperfish isn't limited to it's own favicon, place yours in the custom directory you set in `config.moduleOpts.customPath`
+and Viperfish will use that.
 
 ## Creating Content
 
