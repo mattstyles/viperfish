@@ -163,12 +163,12 @@ module.exports = {
 
 You can see an example of a config file in the [github repo](https://github.com/mattstyles/viperfish/blob/master/config.js "config").
 
-_highlight.js_
+####_highlight.js_
 
 The first line to require highlight.js is only required if you alter the markdown parser options later in the config
 file.
 
-_Module Options_
+####_Module Options_
 
 This object holds the options for setting up the viperfish module.
 
@@ -183,7 +183,7 @@ found in your content repository's main.json (see [creating content](#creating-c
 
 `logo` - The logo that is associated with the website, some themes will require it, others not.
 
-_Template Options_
+####_Template Options_
 
 Viperfish uses the [Express](http://expressjs.com/ "Express") web application framework and supports templates to create
 it's themes.
@@ -194,7 +194,7 @@ to push templates to the express view engine.
 
 `path` - This is the path location of the templates, found within `moduleOpts.customPath/templates/`.
 
-_GithubApi Options_
+####_GithubApi Options_
 
 To grab content from github repositories to use as content Viperfish uses [node-github](https://github.com/mikedeboer/node-github "Javascript GitHub API")
 as a wrapper around the [Github API v3](http://developer.github.com/v3/ "GitHub API v3").
@@ -204,7 +204,7 @@ as a wrapper around the [Github API v3](http://developer.github.com/v3/ "GitHub 
 `contentOpts` - This is primary means of pointing Viperfish to your content, enter the username and repository name and,
 very importantly, leave `path` as `null` (it'll be over-written anyway but, to be sure, leave it in the config for now).
 
-_Marked Options_
+####_Marked Options_
 
 Viperfish uses [Marked](https://github.com/chjj/marked "Markdown Parser") to parse the raw markdown data because Marked
 is just so awesome!
@@ -212,6 +212,54 @@ is just so awesome!
 There are various options and if you want to fiddle with them its best to read the info from the [Marked](https://github.com/chjj/marked "Markdown Parser") github repo.
 
 ### Custom Templates
+
+This is where customising Viperfish gets really interesting.  Viperfish currently only supports [hogan.js](http://twitter.github.com/hogan.js/ "Hulkamania Is Running Wild")
+templates but hogan is a versatile and powerful templating engine, if you haven't used hogan yet then read the hogan docs
+for more info on how to use partials and the other features of the templating engine.  Templating is powerful, get using
+it and get creative!
+
+At the moment Viperfish isn't particularly sophisticated in it's template structure so when you create your own custom
+template folder you'll need to create (or copy) each template into the folder (unlike the config options, viperfish won't
+yet fall back to use default templates when it can't find one although this functionality is planned for the near
+future).
+
+Viperfish requires 7 basic templates but the content of those templates is not static so you can define how each template
+works how you like - be aware though that Vipefish will be making calls to the templates but it is mostly just including
+them so you could use them in different ways.  To see how they are included in Viperfish have a poke around in `lib/routes`.
+I'll outline the basic functionality of each template in the default scheme, also check out the [examples](#usage-examples "Viperfish in the wild")
+to see how other themes use the template system.
+
+####_error.hjs_
+
+The error template to display when an error occurs (usually this is an error collected content from github but it will
+potentially be other things).  It's due to be changed for a 404 template pretty soon.
+
+####_main.hjs_
+
+This is the main template that is called when displaying the opening page or a category page.  It is used to call in the
+other partials - first the `header`, then the main body of the category listing from `listpost` and finally the `footer`.
+
+####_header.hjs_
+
+Sets up the opening HTML5 `<html>` tag, sorts out the `<head>` section, calls the `nav` template after opening the `<body>`.
+
+####_nav.hjs_
+
+Creates the main navigation menu.
+
+####_listpost.hjs_
+
+This template loops through items contained within the content meta file (see the [creating content](#creating-content "How to Create Content")
+section) and displays them.
+
+####_footer.hjs_
+
+Displays the footer.
+
+####_post.hjs_
+
+The post template functions similarly to the main template in that it calls in partials for the `header` and `footer` but
+in between it displays the main content of the post/page that has been grabbed from Github and parsed using Marked.
 
 ### Custom Static Files
 
