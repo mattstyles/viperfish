@@ -42,7 +42,7 @@ That's all you need to get started with viperfish!!  Simple no?
 To see it in action (remember what I said early about prettiness?), use node to fire up the server,
 
 ```
-node start
+node index
 ```
 
 Then have a look at it with (default port is `3001`),
@@ -69,7 +69,7 @@ Viperfish works by grabbing content from a github repo, passing it through a the
 the browser.  In order to make viperfish work for you you'll need to create some content and you'll need to create
 a theme to display that content.
 
-When viperfish is started there are a number of steps that it will perform to correctly initialise itself:
+When viperfish is started there are a number of steps that it will perform to transparently initialise itself:
 
 * [Github Authorisation](#github-authorisation)
 
@@ -100,6 +100,8 @@ authenticate properly with github.
 `GHusername` - the owner of the content repo
 
 `GHpassword` - the password of the repo owner
+
+(For an example of setting environment variables have a look at how to setup a [nodejitsu app](#using-nodejitsu))
 
 ### Custom Configuration File
 
