@@ -201,7 +201,7 @@ as a wrapper around the [Github API v3](http://developer.github.com/v3/ "GitHub 
 
 `apiOpts` - This contains the version of the api to wrap and a timer in milliseconds before the call to the api fails.
 
-`contentOpts` - This is primary means of pointing Viperfish to your content, enter the username and repository name and,
+`contentOpts` - This is the primary means of pointing Viperfish to your content, enter the username and repository name and,
 very importantly, leave `path` as `null` (it'll be over-written anyway but, to be sure, leave it in the config for now).
 
 ####_Marked Options_
@@ -231,7 +231,7 @@ to see how other themes use the template system.
 
 ####_error.hjs_
 
-The error template to display when an error occurs (usually this is an error collected content from github but it will
+The error template to display when an error occurs (usually this is an error collecting content from github but it will
 potentially be other things).  It's due to be changed for a 404 template pretty soon.
 
 ####_main.hjs_
@@ -269,7 +269,7 @@ you want to use in your theme.
 
 ### Custom Favicon
 
-Viperfish isn't limited to it's own favicon, place yours in the custom directory you set in `config.moduleOpts.customPath`
+Viperfish isn't limited to it's own favicon, place yours in the custom directory you set the filename in `config.moduleOpts`
 and Viperfish will use that.
 
 ## Creating Content
@@ -278,7 +278,7 @@ Whilst the delivery mechanism (i.e. Viperfish) and a well designed theme are all
 is really all about the content that it uses.  One of the main principles behind Viperfish is that it should be as
 simple to use as possible and allow writers to write.  To that end the bulk of content that Viperfish uses should be
 written in [Markdown](http://daringfireball.net/projects/markdown/ "Daring Fireball | Markdown") with a few pieces of
-JSON holding it all together.  At present this is not an automated practise so you'll have to go through and carefully
+JSON holding it all together.  At present this is not an automated process so you'll have to go through and carefully
 create the JSON meta along with your posts but they are pretty small at the moment and don't do a lot—an automated tool
 is in production that will take this step away and make it more user friendly.
 
@@ -294,7 +294,7 @@ also see the [examples](#usage-examples "Viperfish in the wild") section.  If yo
 instructions then it should be fairly easy to work out how the information in the content repository maps into Viperfish.
 
 At the moment Viperfish won't validate your content so any errors will just cause it to blow up, however, if you follow
-rules it's pretty simple to get it working for you.
+the rules it's pretty simple to get it working for you.
 
 The content structure for the dummy content repository looks like this,
 
@@ -403,7 +403,7 @@ repo both `ninja/post` and `ninja/dummy` posts contain images.
 ## Usage Examples
 
 To see Viperfish in action visit the [veryfizzyjelly](http://veryfizzyjelly.com "veryfizzyjelly") site.  It's all public
-so it you want to root around in the custom theme then clone the repo on [github](https://github.com/mattstyles/vfj-blog "veryfizzyjelly github repo"),
+so if you want to root around in the custom theme then clone the repo on [github](https://github.com/mattstyles/vfj-blog "veryfizzyjelly github repo"),
 the content structure can also be found on [github](https://github.com/mattstyles/vfj-content "veryfizzyjelly content github repo").
 
 ## Using Nodejitsu
