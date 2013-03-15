@@ -1,6 +1,7 @@
 {
   "name": "viperfish",
   "description": "Node/Github Database-less Blogging Server",
+  "keywords": [ "blog", "node", "github", "markdown", "database-less", "express", "hogan", "templates", "thematic" ],
   "version": "0.3.9",
   "homepage": "https://github.com/mattstyles/viperfish",
   "author": {
@@ -38,6 +39,5 @@
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-jshint": "~0.2.0"
-  },
-  "keywords": []
+  }
 }
