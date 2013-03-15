@@ -401,7 +401,10 @@ repo both `ninja/post` and `ninja/dummy` posts contain images.
 
 
 ## Usage Examples
-_(Coming soon)_
+
+To see Viperfish in action visit the [veryfizzyjelly](http://veryfizzyjelly.com "veryfizzyjelly") site.  It's all public
+so it you want to root around in the custom theme then clone the repo on [github](https://github.com/mattstyles/vfj-blog "veryfizzyjelly github repo"),
+the content structure can also be found on [github](https://github.com/mattstyles/vfj-content "veryfizzyjelly content github repo").
 
 ## Using Nodejitsu
 _(Coming soon)_
@@ -410,7 +413,17 @@ _(Coming soon)_
 _(Coming soon)_
 
 ## Release History
-_(Nothing yet)_
+
+v0.4.0
+
+* Minimal custom theme support
+* Content delivery via [github](https://github.com/ "GitHub")
+* [Markdown](http://daringfireball.net/projects/markdown/ "Daring Fireball | Markdown") support via [Marked](https://github.com/chjj/marked "Markdown Parser") - including [Github Flavoured Markdown](https://help.github.com/articles/github-flavored-markdown "Github Flavoured Markdown")!
+* Usage examples - working example using [Nodejitsu](https://www.nodejitsu.com/ "Nodejitsu")
+* Custom configuration options
+* Install via [npm](https://npmjs.org/ "Node Package Manager")
+* Templating via [Hogan](http://twitter.github.com/hogan.js/ "Hogan.js Templating Engine") and [Consolidate](http://jsdoc.info/visionmedia/consolidate.js/ "Consolidate.js")
+* System runs on the [Express](http://expressjs.com/ "Express Web App Framework for Node") framework
 
 ## License
 Copyright (c) 2013 Matt Styles  
