@@ -298,7 +298,7 @@ the rules it's pretty simple to get it working for you.
 
 The content structure for the dummy content repository looks like this,
 
-![dummy-content-structure](readme-img/content-structure.png "Dummy Repo Content Structure")
+![dummy-content-structure](https://github.com/mattstyles/viperfish/blob/master/readme-img/content-structure.png "Dummy Repo Content Structure")
 
 
 ####_README.md_
