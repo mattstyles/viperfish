@@ -274,6 +274,132 @@ and Viperfish will use that.
 
 ## Creating Content
 
+Whilst the delivery mechanism (i.e. Viperfish) and a well designed theme are all important to a successful blog, a blog
+is really all about the content that it uses.  One of the main principles behind Viperfish is that it should be as
+simple to use as possible and allow writers to write.  To that end the bulk of content that Viperfish uses should be
+written in [Markdown](http://daringfireball.net/projects/markdown/ "Daring Fireball | Markdown") with a few pieces of
+JSON holding it all together.  At present this is not an automated practise so you'll have to go through and carefully
+create the JSON meta along with your posts but they are pretty small at the moment and don't do a lot—an automated tool
+is in production that will take this step away and make it more user friendly.
+
+Another key aspect of Viperfish is that it does not use a database.  This simplifies the delivery mechanism which is
+already pretty lightning fast thanks to the power of Node's event loop.  Viperfish makes delivery of your blog fast and
+that's good!
+
+### Content Structure
+
+Viperfish currently only supports content coming directly from a github repository (other storage methods are planned)
+and an example of the directory structure can be found in the repository that Viperfish uses as it's [default](https://github.com/mattstyles/vpf-def "Viperfish default content repo")—
+also see the [examples](#usage-examples "Viperfish in the wild") section.  If you followed through the [Getting Started](#getting-started "Installing Viperfish")
+instructions then it should be fairly easy to work out how the information in the content repository maps into Viperfish.
+
+At the moment Viperfish won't validate your content so any errors will just cause it to blow up, however, if you follow
+rules it's pretty simple to get it working for you.
+
+The content structure for the dummy content repository looks like this,
+
+![dummy-content-structure](readme-img/content-structure.png "Dummy Repo Content Structure")
+
+
+####_README.md_
+
+This is just for your own reference in the repo - Viperfish will ignore this.
+
+####_main.json_
+
+```json
+{
+  "nav": [
+  	{ "item" : "ninja" },
+  	{ "item" : "flex" }
+  ],
+
+  "recent": [
+    {
+      "post" : {
+        "title"    : "Dummy Post Title",
+        "loc"      : "/dummy/",
+        "category" : "ninja",
+        "date"     : "Tuesday 1st Jan 2013",
+        "extract"  : "This is a short extract for a dummy post - welcome to Viperfish"
+      }
+    },
+    {
+      "post" : {
+          "title"    : "A Post",
+          "loc"      : "/post/",
+          "category" : "ninja",
+          "date"     : "Friday 1st Jan 2013",
+          "extract"  : "This is another short post"
+      }
+    },
+    {
+      "post" : {
+          "title"    : "Type test",
+          "loc"      : "/type/",
+          "category" : "flex",
+          "date"     : "Friday 1st Jan 2013",
+          "extract"  : "This is a post with various typographical elements and should be used to test styling for custom themes"
+      }
+    }
+  ]
+}
+```
+
+Main.json simply holds two objects.  `nav` contains a list of navigation menu items and `recent` holds a list of the
+posts you want to display on the front page.
+
+The `nav` items should correspond to the folders, which represent your different categories.
+
+The `recent` list is a list of post objects that hold various meta about each post that you want to display.  Currently
+there is no automated process for creating this file so you have to do it yourself but, for now, embrace the flexibility!!
+It's fairly obvious to see how the meta maps on to the content - the important bit is the `loc` and `category` which
+Viperfish uses to control it's URLs and push content to the client.  The `title`, `date` & `extract` don't need to map
+to the content and you could use what you like here.
+
+####_Categories & category.json_
+
+Each sub-folder represents a category of posts.  Currently Viperfish only supports one level of nesting.  In the dummy
+repo structure shown above those categories are `ninja` and `flex`.
+
+The `category.json` file holds the meta for the category and is extremely similar to `main.json` and functionally
+fulfills the same purpose.
+
+```json
+{
+  "recent": [
+      {
+          "post" : {
+              "title"    : "Type test",
+              "loc"      : "/type/",
+              "category" : "flex",
+              "date"     : "Tuesday 1st Jan 2013",
+              "extract"  : "This is a post with various typographical elements and should be used to test styling for custom themes"
+          }
+      }
+  ]
+}
+```
+
+It is simply a list of `recent` posts that you want to display.  Note that there is no restriction that you put _all_ of
+the posts from a category into this file, you could, if you wanted, _hide_ some posts from the category listing.
+
+Again, the important point to note here is the `loc` and `category` that Viperfish uses to route its URLs.
+
+####_Posts - content.md & page.json_
+
+The `page.json` simply holds a tiny amount of meta and (as of _v0.4.0_) is just a placeholder—it is not currently
+referenced by Viperfish.
+
+The real meat is in the content markdown file.
+
+Viperfish uses [Marked](https://github.com/chjj/marked "Markdown Parser") to parse it's Markdown for presentation so any
+of the options there are valid for Viperfish and can be set in the config.  This means you have access to [Github Flavoured Markdown](https://help.github.com/articles/github-flavored-markdown "Github Flavoured Markdown").
+
+Any links, such as images, can be placed into a subfolder and referenced in the normal markdown style.  In the dummy
+repo both `ninja/post` and `ninja/dummy` posts contain images.
+
+
 ## Usage Examples
 _(Coming soon)_
 
