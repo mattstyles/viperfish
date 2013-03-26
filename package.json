@@ -2,7 +2,7 @@
   "name": "viperfish",
   "description": "Node/Github Database-less Blogging Server",
   "keywords": [ "blog", "node", "github", "markdown", "database-less", "express", "hogan", "templates", "thematic" ],
-  "version": "0.4.1",
+  "version": "0.4.2",
   "homepage": "https://github.com/mattstyles/viperfish",
   "author": {
     "name": "Matt Styles",
@@ -34,7 +34,8 @@
     "highlight.js": "~7.3.0",
     "github": "~0.1.8",
     "consolidate": "~0.8.0",
-    "hogan.js": "~2.0.0"
+    "hogan.js": "~2.0.0",
+    "octofish": "0.2.x"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
