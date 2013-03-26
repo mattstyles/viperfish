@@ -2,7 +2,7 @@
   "name": "viperfish",
   "description": "Node/Github Database-less Blogging Server",
   "keywords": [ "blog", "node", "github", "markdown", "database-less", "express", "hogan", "templates", "thematic" ],
-  "version": "0.4.0",
+  "version": "0.4.1",
   "homepage": "https://github.com/mattstyles/viperfish",
   "author": {
     "name": "Matt Styles",
