@@ -415,12 +415,16 @@ _(Coming soon)_
 
 ## Release History
 
+v0.4.3
+* Content delivery mechanism API defined and viperfish now uses it to collect content
+
 v0.4.2
 * Content delivery method extracted from viperfish
 * Viperfish now requires a content delivery method to be installed alongside it, for now only [Octofish](https://github.com/mattstyles/octofish "Octofish - Github Delivery System for Viperfish") is available
 
 v0.4.1
 * Minor bug fix release
+* Initial decoupling from content delivery mechanism
 
 v0.4.0
 
