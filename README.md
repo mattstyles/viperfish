@@ -414,11 +414,11 @@ _(Coming soon)_
 
 ## Release History
 
-v0.4.2 - <span style="color: #B212B2">master</span>
+v0.4.2
 * Content delivery method extracted from viperfish
 * Viperfish now requires a content delivery method to be installed alongside it, for now only [Octofish](https://github.com/mattstyles/octofish "Octofish - Github Delivery System for Viperfish") is available
 
-v0.4.0 - <span style="color: #FF0064">npm publish</span>
+v0.4.0
 
 * Minimal custom theme support
 * Content delivery via [github](https://github.com/ "GitHub")
