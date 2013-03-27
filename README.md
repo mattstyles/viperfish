@@ -4,7 +4,8 @@ Node/Github Database-less Markdown Blogging System
 
 __Alpha v0.4.0__
 
-_Use with discretion!_
+_Use with discretion!_ The API is relatively stable but it is in flux so you'll need to keep on your toes if you want
+to use viperfish in production.
 
 Viperfish is a simple blogging system that grabs content from a github repo.
 
@@ -417,6 +418,9 @@ _(Coming soon)_
 v0.4.2
 * Content delivery method extracted from viperfish
 * Viperfish now requires a content delivery method to be installed alongside it, for now only [Octofish](https://github.com/mattstyles/octofish "Octofish - Github Delivery System for Viperfish") is available
+
+v0.4.1
+* Minor bug fix release
 
 v0.4.0
 
