@@ -1,7 +1,17 @@
 {
   "name": "viperfish",
   "description": "Minimalist Node/Github Database-less Blogging System",
-  "keywords": [ "blog", "node", "github", "markdown", "database-less", "express", "hogan", "templates", "thematic" ],
+  "keywords": [
+    "blog",
+    "node",
+    "github",
+    "markdown",
+    "database-less",
+    "express",
+    "hogan",
+    "templates",
+    "thematic"
+  ],
   "version": "0.4.2",
   "homepage": "https://github.com/mattstyles/viperfish",
   "author": {
@@ -33,7 +43,8 @@
     "marked": "~0.2.8",
     "highlight.js": "~7.3.0",
     "consolidate": "~0.8.0",
-    "hogan.js": "~2.0.0"
+    "hogan.js": "~2.0.0",
+    "underscore": "~1.4.4"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
