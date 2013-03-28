@@ -415,6 +415,11 @@ _(Coming soon)_
 
 ## Release History
 
+v0.4.4
+* Change to vpf.init() API
+* Viperfish public API and dev API established - see [wiki](./wiki "viperfish wiki")
+* Mechanism for adding modules to the viperfish core
+
 v0.4.3
 * Content delivery mechanism API defined and viperfish now uses it to collect content
 
@@ -425,6 +430,7 @@ v0.4.2
 v0.4.1
 * Minor bug fix release
 * Initial decoupling from content delivery mechanism
+* [Grunt](http://gruntjs.com/ "Grunt - The Javascript Task Runner") build - only [linting](http://www.jshint.com/ "JSHint") task
 
 v0.4.0
 
