@@ -417,7 +417,7 @@ _(Coming soon)_
 
 v0.4.4
 * Change to vpf.init() API
-* Viperfish public API and dev API established - see [wiki](./wiki "viperfish wiki")
+* Viperfish public API and dev API established - see [wiki](https://github.com/mattstyles/viperfish/wiki "viperfish wiki")
 * Mechanism for adding modules to the viperfish core
 
 v0.4.3
