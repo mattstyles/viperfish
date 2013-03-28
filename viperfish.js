@@ -7,4 +7,5 @@
  */
 
 // Require and start Viperfish
+require('./lib/viperfish').require( 'octofish' );
 require('./lib/viperfish').start();
