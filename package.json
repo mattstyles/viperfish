@@ -49,6 +49,6 @@
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-jshint": "~0.2.0",
-    "octofish": "0.2.x"
+    "octofish": "~0.3.0"
   }
 }
