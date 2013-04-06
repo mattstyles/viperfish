@@ -415,8 +415,11 @@ _(Coming soon)_
 
 ## Release History
 
-v0.4.4
+v0.4.5
 * Change to vpf.init() API
+* Added authentication callbacks
+
+v0.4.4
 * Viperfish public API and dev API established - see [wiki](https://github.com/mattstyles/viperfish/wiki "viperfish wiki")
 * Mechanism for adding modules to the viperfish core
 

@@ -12,7 +12,7 @@
     "templates",
     "thematic"
   ],
-  "version": "0.4.4",
+  "version": "0.4.5",
   "homepage": "https://github.com/mattstyles/viperfish",
   "author": {
     "name": "Matt Styles",
@@ -44,7 +44,9 @@
     "highlight.js": "~7.3.0",
     "consolidate": "~0.8.0",
     "hogan.js": "~2.0.0",
-    "underscore": "~1.4.4"
+    "underscore": "~1.4.4",
+    "superagent": "~0.14.0",
+    "qs": "~0.5.5"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
