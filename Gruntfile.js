@@ -1,8 +1,20 @@
 'use strict';
 
+// Export grunt
 module.exports = function(grunt) {
 
-    // Grunt Init
+    // Include helpers
+//    var utils   = require( './grunt/utils' ).init( grunt );
+    var helpers = require( './grunt/helpers' ).init( grunt );
+
+    // load all grunt tasks
+    require( 'matchdep' ).filterDev( 'grunt-*' ).forEach( grunt.loadNpmTasks );
+
+    // ------------------------------------------------------
+    // --
+    // --   Task Config
+    // --
+    // ------------------------------------------------------
     grunt.initConfig({
 
         // ------------------------------------------------------
@@ -49,9 +61,26 @@ module.exports = function(grunt) {
     // --   Load and register tasks
     // --
     // ------------------------------------------------------
-    grunt.loadNpmTasks('grunt-contrib-jshint');
 
-    // Default task.
-    grunt.registerTask('default', 'jshint');
+    /**
+     * Lint
+     *
+     * Runs jshint over the project
+     */
+    helpers.registerTask(
+        'lint',
+        'Runs jshint over the project',
+        [   'jshint'    ]
+    );
 
+    /**
+     * Default
+     *
+     * Just runs lint at the moment
+     */
+    helpers.registerTask(
+        'default',
+        'Alias for the lint task',
+        [   'lint'  ]
+    );
 };
