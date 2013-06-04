@@ -37,10 +37,28 @@ module.exports = function(grunt) {
         // --
         // ------------------------------------------------------
 
+        // Clean task
+        clean: {
+            jshint: '.jshint'
+        },
+
+        // Prepare hint file
+        jsonmin: {
+            all: {
+                options: {
+                    stripWhitespace : true,
+                    stripComments   : true
+                },
+                files: {
+                    '.jshint' : '.jshintrc'
+                }
+            }
+        },
+
         // Keep shizzle tight
         jshint: {
             options: {
-                jshintrc: '.jshintrc'
+                jshintrc: '.jshint'
             },
 
             // Lint the gruntfile
@@ -70,7 +88,10 @@ module.exports = function(grunt) {
     helpers.registerTask(
         'lint',
         'Runs jshint over the project',
-        [   'jshint'    ]
+        [   'jsonmin',
+            'jshint',
+            'clean:jshint'
+        ]
     );
 
     /**

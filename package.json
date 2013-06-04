@@ -52,6 +52,8 @@
     "grunt": "~0.4.1",
     "grunt-contrib-jshint": "~0.2.0",
     "octofish": "~0.3.0",
-    "matchdep": "~0.1.2"
+    "matchdep": "~0.1.2",
+    "grunt-contrib-clean": "~0.4.1",
+    "grunt-jsonmin": "~0.2.4"
   }
 }
