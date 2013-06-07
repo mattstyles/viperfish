@@ -2,6 +2,7 @@
 
 v0.4.6 - 23.05.13
 
+* Gruntfile help and jsonmin for jshint config file
 * Fixes for server crashes due to 404
 * Proper 404 error route
 
