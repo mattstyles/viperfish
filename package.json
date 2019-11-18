@@ -46,7 +46,7 @@
     "hogan.js": "~2.0.0",
     "underscore": "~1.4.4",
     "superagent": "~0.14.0",
-    "qs": "~0.5.5"
+    "qs": "~6.9.1"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
